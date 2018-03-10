@@ -1,67 +1,56 @@
-<div
-  class="modal fade"
-  id="item-detail-modal"
-  tabindex="-1"
-  role="dialog"
-  aria-hidden="true">
-  <div
-    class="modal-dialog modal-dialog-centered"
-    role="document">
-    <div class="modal-content">
-      <div class="modal-header bg-primary">
-        <h5 class="modal-title text-white">Item Details</h5>
-        <button
-          type="button"
-          class="close text-white"
-          data-dismiss="modal"
-          aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form #form>
-          <div class="form-group row">
-            <label
-              for="title"
-              class="col-sm-2 col-form-label">Title</label>
-            <div class="col-sm-10">
-              <input
-                required
-                type="text"
-                class="form-control"
-                id="title"
-                name="title"
-                [ngModel]="item?.title">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label
-              for="desc"
-              class="col-sm-2 col-form-label px-2">Description</label>
-            <div class="col-sm-10">
-              <textarea
-                class="form-control"
-                id="desc"
-                name="desc"
-                [ngModel]="item?.desc"></textarea>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-danger"
-          data-dismiss="modal"
-          (click)="onDeleteItem()">Delete</button>
-        <button
-          type="button"
-          class="btn btn-secondary"
-          data-dismiss="modal">Cancel</button>
-        <button
-          type="button"
-          class="btn btn-primary">Save</button>
+<h1 mat-dialog-title>Item Details</h1>
+<div mat-dialog-content>
+
+  <form #f="ngForm">
+    <div class="form-group row">
+      <label
+        for="title"
+        class="col-sm-2 col-form-label">
+        Title
+      </label>
+      <div class="col-sm-10">
+        <input
+          required
+          type="text"
+          class="form-control"
+          id="title"
+          name="title"
+          [ngModel]="item?.title">
       </div>
     </div>
-  </div>
+    <div class="form-group row">
+      <label
+        for="desc"
+        class="col-sm-2 col-form-label px-2">
+        Description
+      </label>
+      <div class="col-sm-10">
+  <textarea
+    class="form-control"
+    id="desc"
+    name="desc"
+    [ngModel]="item?.desc">
+  </textarea>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+<div
+  mat-dialog-actions
+  class="justify-content-center justify-content-sm-end">
+  <button
+    type="button"
+    class="btn btn-danger mx-sm-2"
+    (click)="onDelete()">Delete</button>
+  <button
+    type="button"
+    class="btn btn-secondary mx-sm-2"
+    (click)="onClose()">Cancel</button>
+  <button
+    [disabled]="!f.valid"
+    type="button"
+    class="btn btn-primary mx-sm-2"
+    (click)="onSave(f)">Save</button>
 </div>

@@ -1,6 +1,6 @@
 <div id="container-item" class="d-flex">
-  <a (click)="toggleItemCompletion(item)" class="align-self-center">
-    <i class="fa-lg" [ngClass]="{'fas fa-check': item.isCompleted, 'far fa-square': !item.isCompleted}"></i>
+  <a class="align-self-center pointer" (click)="toggleItemCompletion()">
+    <i class="far fa-lg" [ngClass]="item.isCompleted ? 'fa-check-circle' : 'fa-circle'"></i>
   </a>
   <form class="col">
     <input
@@ -10,13 +10,13 @@
       class="form-control-plaintext"
       name="title"
       [(ngModel)]="item.title"
-      (blur)="test(item)">
+      (blur)="onBlur(item)">
+  <!--<span>{{ item.isCompleted }}</span>-->
   </form>
   <span
-    class="align-self-center ml-auto mr-2 badge badge-primary badge-pill"
-    (click)="onDisplayDetail(item)"
-    data-toggle="modal"
-    data-target="#item-detail-modal">
+    class="align-self-center ml-auto mr-2 badge badge-primary badge-pill pointer"
+    matTooltipPosition="before"
+    (click)="openDialog(item)">
     <i class="fas fa-info"></i>
   </span>
 </div>

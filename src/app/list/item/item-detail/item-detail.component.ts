@@ -1,26 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import { ListService } from '../../list.service';
+import { Component, Inject } from '@angular/core';
 import { Item } from '../item.model';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { ListService } from '../../list.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-item-detail',
   templateUrl: './item-detail.component.html',
   styleUrls: ['./item-detail.component.css']
 })
-export class ItemDetailComponent implements OnInit {
-  item: Item;
+export class ItemDetailComponent {
 
-  constructor(private listService: ListService) { }
+  constructor(
+    public listService: ListService,
+    public dialogRef: MatDialogRef<ItemDetailComponent>,
+    @Inject(MAT_DIALOG_DATA) public item: Item) { }
 
-  ngOnInit() {
-    this.item = this.listService.selectedItem;
+  onClose(): void {
+    this.dialogRef.close();
   }
 
-  getSelectedItem() {
-    return this.listService.selectedItem;
+  onDelete() {
+    this.listService.deleteItem(this.item);
+    this.onClose();
   }
 
-  onDeleteItem() {
-    this.listService.deleteItem(this.listService.selectedItem);
+  onSave(form: NgForm) {
+    this.item.title = form.value.title;
+    this.item.desc = form.value.desc;
+    this.onClose();
   }
 }
