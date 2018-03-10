@@ -15,4 +15,11 @@ export class ListService implements OnInit {
     item.isCompleted = !item.isCompleted;
   }
 
+  deleteItem(item: Item) {
+    if (window.confirm('Delete item?')) {
+      this.items.splice(this.items.indexOf(item), 1);
+    }
+
+  }
+
 }

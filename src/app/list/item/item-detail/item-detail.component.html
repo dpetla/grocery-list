@@ -8,11 +8,11 @@
     class="modal-dialog modal-dialog-centered"
     role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Item Details</h5>
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title text-white">Item Details</h5>
         <button
           type="button"
-          class="close"
+          class="close text-white"
           data-dismiss="modal"
           aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -21,20 +21,39 @@
       <div class="modal-body">
         <form #form>
           <div class="form-group row">
-            <label for="title" class="col-sm-2 col-form-label">Title</label>
+            <label
+              for="title"
+              class="col-sm-2 col-form-label">Title</label>
             <div class="col-sm-10">
-              <input type="text"  class="form-control" id="title" name="title">
+              <input
+                required
+                type="text"
+                class="form-control"
+                id="title"
+                name="title"
+                [ngModel]="getSelectedItem()?.title">
             </div>
           </div>
           <div class="form-group row">
-            <label for="desc" class="col-sm-2 col-form-label px-2">Description</label>
+            <label
+              for="desc"
+              class="col-sm-2 col-form-label px-2">Description</label>
             <div class="col-sm-10">
-              <textarea class="form-control" id="desc" name="desc"></textarea>
+              <textarea
+                class="form-control"
+                id="desc"
+                name="desc"
+                [ngModel]="getSelectedItem()?.desc"></textarea>
             </div>
           </div>
         </form>
       </div>
       <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-dismiss="modal"
+          (click)="onDeleteItem()">Delete</button>
         <button
           type="button"
           class="btn btn-secondary"

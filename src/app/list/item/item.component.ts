@@ -8,7 +8,7 @@ import { ListService } from '../list.service';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
-@Input() item: Item;
+  @Input() item: Item;
 
   constructor(private listService: ListService) { }
 
@@ -23,4 +23,11 @@ export class ItemComponent implements OnInit {
     this.listService.selectedItem = item;
   }
 
+  test(item: Item) {
+    if (item.title === '') {
+      this.listService.deleteItem(item);
+    }
+  }
+
 }
+

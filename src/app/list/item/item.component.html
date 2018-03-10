@@ -1,17 +1,24 @@
 <div id="container-item" class="d-flex">
-  <a (click)="toggleItemCompletion(item)" class="align-self-center col-1">
+  <a (click)="toggleItemCompletion(item)" class="align-self-center">
     <i class="fa-lg" [ngClass]="{'fas fa-check': item.isCompleted, 'far fa-square': !item.isCompleted}"></i>
   </a>
-  <form class="col-9">
-    <input type="text" class="form-control-plaintext" name="title" [(ngModel)]="item.title">
+  <form class="col">
+    <input
+      required
+      placeholder="Enter item here"
+      autofocus type="text"
+      class="form-control-plaintext"
+      name="title"
+      [(ngModel)]="item.title"
+      (blur)="test(item)">
   </form>
-  <!--<span class="">{{ item.title }} - {{ item.isCompleted }}</span>-->
-  <button
-    type="button"
-    class="col-2 btn"
+  <span
+    class="align-self-center ml-auto mr-2 badge badge-primary badge-pill"
+    (click)="onDisplayDetail(item)"
     data-toggle="modal"
-    data-target="#item-detail-modal"
-    (click)="onDisplayDetail(item)">detail</button>
+    data-target="#item-detail-modal">
+    <i class="fas fa-info"></i>
+  </span>
 </div>
 
 
