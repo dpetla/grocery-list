@@ -9,6 +9,7 @@ import { ItemComponent } from './list/item/item.component';
 import { ItemDetailComponent } from './list/item/item-detail/item-detail.component';
 import { ListService } from './list/list.service';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule
   ],
   providers: [ListService],
