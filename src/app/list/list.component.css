@@ -1,0 +1,8 @@
+.list-group-item:first-child {
+  border-radius: 0;
+}
+
+.navbar {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}

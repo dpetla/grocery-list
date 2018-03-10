@@ -1,0 +1,18 @@
+<div id="container-item" class="d-flex">
+  <a (click)="toggleItemCompletion(item)" class="align-self-center col-1">
+    <i class="fa-lg" [ngClass]="{'fas fa-check': item.isCompleted, 'far fa-square': !item.isCompleted}"></i>
+  </a>
+  <form class="col-9">
+    <input type="text" class="form-control-plaintext" name="title" [(ngModel)]="item.title">
+  </form>
+  <!--<span class="">{{ item.title }} - {{ item.isCompleted }}</span>-->
+  <button
+    type="button"
+    class="col-2 btn"
+    data-toggle="modal"
+    data-target="#item-detail-modal"
+    (click)="onDisplayDetail(item)">detail</button>
+</div>
+
+
+

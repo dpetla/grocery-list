@@ -1,0 +1,13 @@
+<div id="container-list">
+  <nav class="navbar navbar-dark bg-primary">
+  <span class="navbar-brand h2">My List</span>
+    <button type="button" class="btn btn-primary pull-right" (click)="onAddItem()">
+      <i class="fas fa-plus fa-lg text-white"></i>
+    </button>
+  </nav>
+  <ul class="list-group">
+    <li *ngFor="let item of getItems()" class="list-group-item">
+      <app-item [item]="item"></app-item>
+    </li>
+  </ul>
+</div>
