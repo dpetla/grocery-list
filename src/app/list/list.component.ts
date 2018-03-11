@@ -14,7 +14,7 @@ export class ListComponent implements OnInit {
   }
 
   onAddItem() {
-    // check if there is an item with empty title in the list
+    // check if there is already an item with empty title in the list
     let isCreate = true;
     this.listService.items.map(item => {
       if (item.title === '') {
@@ -22,12 +22,12 @@ export class ListComponent implements OnInit {
       }
     });
 
-    // create blank item if there are no other item with empty title
+    // create blank item
     if (isCreate) {
       this.listService.items.push({
         title: '',
         desc: '',
-        isCompleted: false
+        isPurchased: false
       });
     }
 

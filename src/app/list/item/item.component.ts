@@ -21,23 +21,23 @@ export class ItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggleItemCompletion() {
-    this.item.isCompleted = !this.item.isCompleted;
+  togglePurchase() {
+    this.item.isPurchased = !this.item.isPurchased;
   }
 
+  // delete item from list if title is empty when loosing element's focus
   onBlur(item: Item) {
     if (item.title === '') {
       this.listService.deleteItem(item);
     }
   }
 
+  // open dialog and passes dialog's config
   openDialog(item: Item): void {
-    const dialogRef = this.dialog.open(ItemDetailComponent, {
+    this.dialog.open(ItemDetailComponent, {
       width: '600px',
       data: item
     });
-
-    dialogRef.afterClosed();
   }
 
 }

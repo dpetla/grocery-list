@@ -1,8 +1,8 @@
 import { Component, Inject } from '@angular/core';
-import { Item } from '../item.model';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { ListService } from '../../list.service';
 import { NgForm } from '@angular/forms';
+import { ListService } from '../../list.service';
+import { Item } from '../item.model';
 
 @Component({
   selector: 'app-item-detail',
@@ -10,6 +10,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./item-detail.component.css']
 })
 export class ItemDetailComponent {
+  errorMsg = '';
 
   constructor(
     public listService: ListService,
@@ -26,8 +27,23 @@ export class ItemDetailComponent {
   }
 
   onSave(form: NgForm) {
-    this.item.title = form.value.title;
-    this.item.desc = form.value.desc;
-    this.onClose();
+    // check if title is already in use
+    const duplicateTitle = this.listService.items
+      .map((item, index) => {
+        return (item.title === form.value.title) && (index === this.listService.items.indexOf(item));
+      })
+      .reduce((acum, value) => acum || value);
+
+    if (!duplicateTitle || this.item.title === form.value.title) {
+      // update title only when isn't already in use
+      if (this.item.title !== form.value.title) {
+        this.item.title = form.value.title;
+      }
+      this.item.desc = form.value.desc;
+      this.onClose();
+    } else {
+      this.errorMsg = 'Item alredy exists in the list!';
+      setTimeout(() => this.errorMsg = '', 3000);
+    }
   }
 }

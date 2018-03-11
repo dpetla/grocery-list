@@ -1,9 +1,10 @@
 <div id="container-item" class="d-flex">
-  <a class="align-self-center pointer" (click)="toggleItemCompletion()">
-    <i class="far fa-lg" [ngClass]="item.isCompleted ? 'fa-check-circle' : 'fa-circle'"></i>
+  <a class="align-self-center pointer" (click)="togglePurchase()">
+    <i class="material-icons">{{ item.isPurchased ? 'check_box' : 'check_box_outline_blank'}}</i>
   </a>
   <form class="col">
     <input
+      [class.text-muted]="item.isPurchased"
       required
       placeholder="Enter item here"
       autofocus type="text"
@@ -11,7 +12,6 @@
       name="title"
       [(ngModel)]="item.title"
       (blur)="onBlur(item)">
-  <!--<span>{{ item.isCompleted }}</span>-->
   </form>
   <span
     class="align-self-center ml-auto mr-2 badge badge-primary badge-pill pointer"
