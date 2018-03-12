@@ -1,11 +1,20 @@
 import { Item } from './item/item.model';
-import { OnInit } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+@Injectable()
 export class ListService implements OnInit {
   items: Array<Item> = [
-    { title: 'Item 1', desc: 'Item 1 description', isPurchased: true },
-    { title: 'Item 2', desc: 'Item 2 description', isPurchased: false }
+    { title: 'Item 1', desc: 'Item 1 description', picked: 't' },
+    { title: 'Item 2', desc: 'Item 2 description', picked: 'f' }
   ];
+
+
+
+
+  constructor(private http: HttpClient) {
+
+  }
 
   ngOnInit(): void {
   }
@@ -15,5 +24,18 @@ export class ListService implements OnInit {
       this.items.splice(this.items.indexOf(item), 1);
     }
   }
+
+
+  // getItems() {
+  //
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Access-Control-Allow-Origin': '*'
+  //     })
+  //   };
+  //
+  //   return this.http.get<Item[]>('http://localhost:8080/items', httpOptions)
+  //     .subscribe(data => this.items = data);
+  // }
 
 }

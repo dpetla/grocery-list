@@ -11,6 +11,7 @@ import { ListComponent } from './list/list.component';
 import { ItemComponent } from './list/item/item.component';
 import { ItemDetailComponent } from './list/item/item-detail/item-detail.component';
 import { ListService } from './list/list.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ListService } from './list/list.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
     MatDialogModule,

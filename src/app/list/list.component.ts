@@ -11,6 +11,7 @@ export class ListComponent implements OnInit {
   constructor(private listService: ListService) { }
 
   ngOnInit() {
+    // this.listService.getItems();
   }
 
   onAddItem() {
@@ -27,7 +28,7 @@ export class ListComponent implements OnInit {
       this.listService.items.push({
         title: '',
         desc: '',
-        isPurchased: false
+        picked: 'f'
       });
     }
 

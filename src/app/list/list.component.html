@@ -16,7 +16,7 @@
     <li
       *ngFor="let item of getItems()"
       class="list-group-item"
-      [class.text-muted]="item.isPurchased">
+      [class.text-muted]="item.picked">
       <app-item [item]="item"></app-item>
     </li>
   </ul>

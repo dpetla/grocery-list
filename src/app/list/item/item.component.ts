@@ -22,7 +22,7 @@ export class ItemComponent implements OnInit {
   }
 
   togglePurchase() {
-    this.item.isPurchased = !this.item.isPurchased;
+    this.item.picked = this.item.picked === 'f' ? 't' : 'f';
   }
 
   // delete item from list if title is empty when loosing element's focus
