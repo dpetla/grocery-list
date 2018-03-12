@@ -1,6 +1,10 @@
 <div id="container-item" class="d-flex">
-  <a class="align-self-center pointer" (click)="togglePurchase()">
-    <i class="material-icons">{{ item.picked === 't' ? 'check_box' : 'check_box_outline_blank'}}</i>
+  <a
+    class="align-self-center pointer"
+    (click)="togglePurchase()">
+    <i class="material-icons">
+      {{ item.picked === 't' ? 'check_box' : 'check_box_outline_blank'}}
+    </i>
   </a>
   <form class="col">
     <input

@@ -32,7 +32,6 @@ export class ItemComponent implements OnInit {
       this.listService.deleteItem(item);
     } else {
       this.listService.addItem(item);
-      // console.log(item);
     }
   }
 

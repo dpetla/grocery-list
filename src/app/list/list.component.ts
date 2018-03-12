@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ListService } from './list.service';
 
 @Component({
@@ -23,12 +24,13 @@ export class ListComponent implements OnInit {
       }
     });
 
-    // create blank item
+    // create blank item locally, only saved when input onBlur event triggers
     if (isCreate) {
       this.listService.items.push({
-        title: '',
-        notes: '',
-        picked: 'f'
+        'id': '',
+        'title': '',
+        'notes': '',
+        'picked': 'f'
       });
     }
 
