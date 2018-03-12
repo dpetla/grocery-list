@@ -27,7 +27,7 @@ export class ListComponent implements OnInit {
     if (isCreate) {
       this.listService.items.push({
         title: '',
-        desc: '',
+        notes: '',
         picked: 'f'
       });
     }

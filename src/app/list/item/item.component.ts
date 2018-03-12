@@ -23,12 +23,16 @@ export class ItemComponent implements OnInit {
 
   togglePurchase() {
     this.item.picked = this.item.picked === 'f' ? 't' : 'f';
+    this.listService.updateItem(this.item);
   }
 
   // delete item from list if title is empty when loosing element's focus
   onBlur(item: Item) {
     if (item.title === '') {
       this.listService.deleteItem(item);
+    } else {
+      this.listService.addItem(item);
+      // console.log(item);
     }
   }
 

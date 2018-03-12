@@ -39,7 +39,8 @@ export class ItemDetailComponent {
       if (this.item.title !== form.value.title) {
         this.item.title = form.value.title;
       }
-      this.item.desc = form.value.desc;
+      this.item.notes = form.value.desc;
+      this.listService.updateItem(this.item);
       this.onClose();
     } else {
       this.errorMsg = 'Item alredy exists in the list!';

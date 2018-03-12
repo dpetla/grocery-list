@@ -1,5 +1,6 @@
 export interface Item {
+  id?: string;
   title: string;
-  desc: string;
+  notes: string;
   picked: string;
 }
