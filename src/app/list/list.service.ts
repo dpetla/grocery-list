@@ -9,11 +9,7 @@ export class ListService implements OnInit {
     { title: 'Item 2', desc: 'Item 2 description', picked: 'f' }
   ];
 
-
-
-
   constructor(private http: HttpClient) {
-
   }
 
   ngOnInit(): void {
@@ -24,18 +20,5 @@ export class ListService implements OnInit {
       this.items.splice(this.items.indexOf(item), 1);
     }
   }
-
-
-  // getItems() {
-  //
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({
-  //       'Access-Control-Allow-Origin': '*'
-  //     })
-  //   };
-  //
-  //   return this.http.get<Item[]>('http://localhost:8080/items', httpOptions)
-  //     .subscribe(data => this.items = data);
-  // }
 
 }
