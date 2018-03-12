@@ -4,13 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class ListService implements OnInit {
-  items: Array<Item> = [
-    { title: 'Item 1', desc: 'Item 1 description', picked: 't' },
-    { title: 'Item 2', desc: 'Item 2 description', picked: 'f' }
-  ];
-
-
-
+  items: Array<Item> = [ ];
 
   constructor(private http: HttpClient) {
 
@@ -26,16 +20,16 @@ export class ListService implements OnInit {
   }
 
 
-  // getItems() {
-  //
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({
-  //       'Access-Control-Allow-Origin': '*'
-  //     })
-  //   };
-  //
-  //   return this.http.get<Item[]>('http://localhost:8080/items', httpOptions)
-  //     .subscribe(data => this.items = data);
-  // }
+  getItems() {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Access-Control-Allow-Origin': '*'
+      })
+    };
+
+    return this.http.get<Item[]>('http://localhost:8080/items', httpOptions)
+      .subscribe(data => this.items = data);
+  }
 
 }
