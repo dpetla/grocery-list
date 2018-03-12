@@ -9,7 +9,14 @@ This is a simple web based grocery list tool to track grocery items. It was buil
  - `npm install`
  - `npm start`
  
- ## Consuming RESTful web services
+## View
+List
+![](https://github.com/dpetla/grocery-list/blob/master/src/assets/images/grocery-list.jpg)
+
+Item detail
+![](https://github.com/dpetla/grocery-list/blob/master/src/assets/images/item-details.jpg)
+
+## Consuming RESTful web services
  
 Optionally, it is possible to run this app connected to a database. The branch [clientAPI](https://github.com/dpetla/grocery-list/tree/clientAPI) is customized to consume RESTful web service from the repo [grocery-list-web-service](https://github.com/dpetla/grocery-list-web-service).
 
