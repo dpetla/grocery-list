@@ -1,28 +1,20 @@
-# GroceryList
+# Grocery List
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
+This is a simple web based grocery list tool to track grocery items. It was built with Angular 5, Angular CLI 1.6, Bootstrap 4, Font Awesome, and Angular Material.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Build process 
 
-## Code scaffolding
+ - Clone or download the repo
+ - `npm install`
+ - `npm start`
+ 
+ ## Consuming RESTful web services
+ 
+Optionally, it is possible to run this app connected to a database. The branch [clientAPI](https://github.com/dpetla/grocery-list/tree/clientAPI) is customized to consume RESTful web service from the repo [grocery-list-web-service](https://github.com/dpetla/grocery-list-web-service).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Follow these steps to run this application using the web service:
+- build and run `npm start` on branch clientAPI
+- install, configure and run MySQL server
+- build and run [grocery-list-web-service](https://github.com/dpetla/grocery-list-web-service)
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# grocery-list
