@@ -3,7 +3,7 @@
 This is a simple web based grocery list tool to track grocery items. It was built with Angular 5, Angular CLI 1.6, Bootstrap 4, Font Awesome, and Angular Material.
 
 
-## Build process 
+## Build 
 
  - Clone or download the repo
  - `npm install`
