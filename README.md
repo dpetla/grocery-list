@@ -8,6 +8,7 @@ This is a simple web based grocery list tool to track grocery items. It was buil
  - Clone or download the repo
  - `npm install`
  - `npm start`
+ - access http://localhost:4200/
  
 ## View
 List
